@@ -1,0 +1,445 @@
+/* =========================================================
+   SarVita Arc — Complete Visual Identity
+   ========================================================= */
+
+:root {
+    --sarvita-bg-1: #050509;
+    --sarvita-bg-2: #0b0714;
+    --sarvita-bg-3: #170b24;
+
+    --sarvita-primary: #c43cff;
+    --sarvita-secondary: #7c3cff;
+    --sarvita-accent: #ff3cac;
+
+    --sarvita-text: #f7f3ff;
+    --sarvita-muted: #aaa1b8;
+
+    --sarvita-glow-1: rgba(196, 60, 255, .25);
+    --sarvita-glow-2: rgba(255, 60, 172, .20);
+    --sarvita-glow-3: rgba(124, 60, 255, .20);
+
+    --sarvita-border: rgba(196, 60, 255, .24);
+}
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+html,
+body {
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            var(--sarvita-glow-1),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 25%,
+            var(--sarvita-glow-2),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            var(--sarvita-glow-3),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            var(--sarvita-bg-1),
+            var(--sarvita-bg-2),
+            var(--sarvita-bg-3),
+            var(--sarvita-bg-1)
+        ) !important;
+
+    color: var(--sarvita-text);
+}
+
+/* Animated color atmosphere */
+
+body::before {
+    content: "";
+    position: fixed;
+
+    inset: -35%;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 25% 30%,
+            rgba(196, 60, 255, .18),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 75% 30%,
+            rgba(255, 60, 172, .14),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 50% 80%,
+            rgba(124, 60, 255, .14),
+            transparent 30%
+        );
+
+    filter: blur(75px);
+
+    animation:
+        sarvitaAtmosphere 18s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+@keyframes sarvitaAtmosphere {
+
+    0% {
+        transform:
+            translate3d(-4%, -3%, 0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate3d(4%, 3%, 0)
+            scale(1.10);
+    }
+
+    100% {
+        transform:
+            translate3d(-2%, 4%, 0)
+            scale(1.05);
+    }
+}
+
+/* =========================================================
+   PANELS
+   ========================================================= */
+
+.drawer-content,
+.popup,
+.menu,
+.dialog,
+.modal,
+#chat,
+#left-nav-panel,
+#right-nav-panel {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 12, 32, .94),
+            rgba(7, 6, 12, .96)
+        ) !important;
+
+    border-color:
+        var(--sarvita-border) !important;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button,
+.menu_button,
+input[type="button"],
+input[type="submit"] {
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        border-color .18s ease;
+}
+
+button:hover,
+.menu_button:hover {
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 0 20px
+        rgba(196, 60, 255, .22);
+}
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+input,
+textarea,
+select {
+
+    border-color:
+        rgba(196, 60, 255, .22) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+
+    border-color:
+        var(--sarvita-primary) !important;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(196, 60, 255, .10),
+        0 0 22px
+        rgba(196, 60, 255, .18) !important;
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+    color: #d98aff;
+}
+
+a:hover {
+    color: #ff74c4;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background:
+        rgba(0, 0, 0, .25);
+}
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--sarvita-primary),
+            var(--sarvita-accent)
+        );
+
+    border-radius: 10px;
+}
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+    background:
+        rgba(196, 60, 255, .35);
+
+    color: white;
+}
+
+/* =========================================================
+   SARVITA BOOT SCREEN
+   ========================================================= */
+
+#sarvita-arc-boot {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2147483647;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #050509,
+            #0b0714,
+            #170b24,
+            #050509
+        );
+
+    background-size:
+        300% 300%;
+
+    animation:
+        sarvitaBootGradient
+        12s
+        ease
+        infinite;
+}
+
+#sarvita-arc-boot::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 80vmax;
+    height: 80vmax;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(196, 60, 255, .22),
+            rgba(255, 60, 172, .10),
+            transparent 68%
+        );
+
+    filter:
+        blur(45px);
+
+    animation:
+        sarvitaBootGlow
+        8s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+#sarvita-arc-boot-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 28px;
+
+    width: min(86vw, 520px);
+
+    text-align: center;
+}
+
+#sarvita-arc-boot-image {
+
+    width: min(68vw, 340px);
+
+    max-height: 46vh;
+
+    object-fit: contain;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 0 35px
+        rgba(196, 60, 255, .30),
+        0 0 90px
+        rgba(255, 60, 172, .15);
+
+    animation:
+        sarvitaBootImage
+        5s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+#sarvita-arc-boot-brand {
+
+    font-size: clamp(28px, 7vw, 52px);
+
+    font-weight: 800;
+
+    letter-spacing: .08em;
+
+    color: white;
+
+    text-shadow:
+        0 0 20px
+        rgba(196, 60, 255, .55),
+        0 0 50px
+        rgba(255, 60, 172, .25);
+}
+
+#sarvita-arc-boot-status {
+
+    font-size: 16px;
+
+    color:
+        rgba(255,255,255,.72);
+
+    letter-spacing:
+        .18em;
+}
+
+@keyframes sarvitaBootGradient {
+
+    0% {
+        background-position:
+            0% 50%;
+    }
+
+    50% {
+        background-position:
+            100% 50%;
+    }
+
+    100% {
+        background-position:
+            0% 50%;
+    }
+}
+
+@keyframes sarvitaBootGlow {
+
+    from {
+        transform:
+            translate(-12%, -8%)
+            scale(.90);
+    }
+
+    to {
+        transform:
+            translate(12%, 8%)
+            scale(1.10);
+    }
+}
+
+@keyframes sarvitaBootImage {
+
+    from {
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translateY(-8px)
+            scale(1.035);
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    #sarvita-arc-boot-image {
+
+        width:
+            min(78vw, 330px);
+
+        border-radius:
+            22px;
+    }
+}
