@@ -41,6 +41,13 @@ async function createApp() {
   // Reuse middleware that attaches user data to requests
   app.use(setUserDataMiddleware);
 
+  // The browser requests this before the first API call. The serverless adapter
+  // does not run the full long-lived server bootstrap, so provide the same
+  // response shape without blocking frontend initialization.
+  app.get('/csrf-token', (_req, res) => {
+    res.json({ token: 'serverless' });
+  });
+
   // Mount existing public user endpoints
   app.use('/api/users', usersPublicRouter);
 
