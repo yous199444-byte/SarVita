@@ -70,6 +70,12 @@ async function getApp() {
 }
 
 export default async function handler(req, res) {
+  // Keep the health check independent from user-storage initialization so it
+  // remains reliable in Vercel's ephemeral serverless runtime.
+  if ((req.method === 'GET' || req.method === 'HEAD') && req.url?.split('?')[0] === '/api/ping') {
+    return res.status(204).send();
+  }
+
   const app = await getApp();
   return app(req, res);
 }
