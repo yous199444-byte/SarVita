@@ -104,24 +104,13 @@
     "engines": {
         "node": ">= 20"
     },
-    "overrides": {
-        "vectra": {
-            "openai": "^4.17.0"
-        },
-        "node-fetch": {
-            "whatwg-url": "^14.0.0"
-        }
-    },
-    "name": "sarvita-arc",
     "type": "module",
+    "name": "sarvita-arc",
     "license": "AGPL-3.0",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/SillyTavern/SillyTavern.git"
-    },
     "version": "1.18.0",
     "scripts": {
         "init": "node src/server-init.js",
+        "build": "node ./scripts/build-lib.js",
         "start": "node server.js",
         "debug": "node --inspect server.js",
         "start:global": "node server.js --global",
