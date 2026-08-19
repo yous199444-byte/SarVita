@@ -1,9 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "outputDirectory": "public",
-  "functions": {
-    "api/auth.js": {
-      "maxDuration": 60
-    }
-  }
+  "cleanUrls": true,
+  "trailingSlash": false
 }
