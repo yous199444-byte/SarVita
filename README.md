@@ -9,6 +9,10 @@ LLM Frontend for Power Users
 - Discord: <https://discord.gg/sillytavern>
 - Reddit: <https://reddit.com/r/SillyTavernAI>
 
+## Languages
+
+- العربية
+
 ## License
 
 AGPL-3.0
