@@ -1,35 +1,18 @@
 {
-    "name": "SarVita Arc",
-    "short_name": "SarVita Arc",
-    "start_url": "/",
-    "display": "standalone",
-    "theme_color": "#0b0714",
-    "background_color": "#050509",
-    "icons": [
-        {
-            "src": "/img/branding/sarvita-arc/icons/icon-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "any"
-        },
-        {
-            "src": "/img/branding/sarvita-arc/icons/icon-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "maskable"
-        },
-        {
-            "src": "/img/branding/sarvita-arc/icons/icon-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "any"
-        },
-        {
-            "src": "/img/branding/sarvita-arc/icons/icon-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "maskable"
-        }
-    ],
-    "description": "SarVita Arc"
+  "name": "SarVita Arc",
+  "short_name": "SarVita Arc",
+  "description": "SarVita Arc",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b0812",
+  "theme_color": "#0b0812",
+  "icons": [
+    {
+      "src": "/img/branding/sarvita-arc/main/sarvita-arc-main-square.png",
+      "sizes": "1200x1200",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
 }

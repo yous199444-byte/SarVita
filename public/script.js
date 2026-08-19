@@ -703,10 +703,10 @@ async function firstLoadInit() {
     initLoaderOverlay.classList.add('splash-screen');
 
     const splashLogo = document.createElement('img');
-    splashLogo.src = '/img/logo.png';
-    splashLogo.alt = 'SillyTavern';
+    splashLogo.src = '/img/branding/sarvita-arc/main/sarvita-arc-main-square.png';
+    splashLogo.alt = 'SarVita Arc';
     splashLogo.className = 'splash-logo';
-    splashLogo.ariaLabel = t`SillyTavern Logo`;
+    splashLogo.ariaLabel = 'SarVita Arc Logo';
 
     const splashMessage = document.createElement('h2');
     splashMessage.className = 'splash-message';
