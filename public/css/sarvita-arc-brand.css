@@ -239,6 +239,72 @@ a:hover {
 }
 
 /* =========================================================
+   HOMEPAGE FEATURE VIDEO
+   ========================================================= */
+
+#sarvita-home-video {
+    position: fixed;
+    right: clamp(14px, 2.4vw, 34px);
+    bottom: clamp(76px, 8vh, 112px);
+    z-index: 2;
+    width: min(29vw, 390px);
+    min-width: 250px;
+    padding: 10px;
+    border: 1px solid var(--sarvita-border);
+    border-radius: 16px;
+    background: rgba(5, 5, 9, .78);
+    box-shadow: 0 14px 42px rgba(0, 0, 0, .38), 0 0 28px var(--sarvita-glow-1);
+    backdrop-filter: blur(14px);
+}
+
+.sarvita-home-video__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 2px 4px 9px;
+    color: var(--sarvita-text);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.sarvita-home-video__status {
+    color: var(--sarvita-muted);
+    font-size: 10px;
+}
+
+.sarvita-home-video__player {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    max-height: 32vh;
+    border-radius: 10px;
+    background: #050509;
+    object-fit: contain;
+}
+
+@media (max-width: 700px) {
+    #sarvita-home-video {
+        right: 10px;
+        bottom: 70px;
+        width: min(calc(100vw - 20px), 360px);
+        min-width: 0;
+        padding: 8px;
+        border-radius: 13px;
+    }
+
+    .sarvita-home-video__header {
+        padding-bottom: 7px;
+    }
+
+    .sarvita-home-video__player {
+        max-height: 27vh;
+    }
+}
+
+/* =========================================================
    SARVITA BOOT SCREEN
    ========================================================= */
 
