@@ -26,38 +26,43 @@ The main interface includes a muted, inline, looping feature video with native c
 
 It uses `preload="metadata"`, `playsinline`, and responsive sizing so it remains usable on phones and desktop screens while avoiding layout distortion.
 
-## Development
+## التشغيل المحلي
 
-Requirements:
-
-- Node.js 20 or newer
-- npm
-
-Install dependencies and build the browser bundle:
+المتطلبات: Node.js 20 أو أحدث وnpm.
 
 ```bash
 npm ci
 npm run build
-```
-
-Start the application locally:
-
-```bash
 npm start
 ```
 
-The primary local routes are:
+## Production وRailway
 
-- `/` — SarVita Arc main interface
-- `/login` — login page
-- `/api/ping` — serverless health check
-- `/lib.js` — browser bundle
-- `/script.js` — frontend bootstrap and application logic
-- `/style.css` — primary stylesheet
+أمر البناء هو `npm run build`، وأمر التشغيل هو `npm start` أو `npm run start:production`. يقرأ الخادم `PORT` ويستمع على `0.0.0.0` عند تشغيله مع `--listen`، مع fallback محلي على المنفذ 8000. ملف `railway.json` يضبط Nixpacks، البناء، أمر التشغيل، وفحص الصحة `/api/ping`.
 
-## Vercel deployment
+للنشر على Railway:
 
-The repository includes `vercel.json` routing for the static `public/` assets and serverless handlers under `api/`. Production deployments should build the project bundle before deploying the prebuilt output.
+1. أنشئ مشروعاً جديداً واربط مستودع SarVita.
+2. استخدم Node.js 20 أو أحدث.
+3. اترك Railway يحقن `PORT` تلقائياً.
+4. اضبط متغيرات البيئة المطلوبة من دون وضع أسرار في المستودع.
+5. تحقق من `/api/ping` ثم افتح `/`.
+
+## Vercel
+
+يبقى `vercel.json` محفوظاً كما هو، ويوجه أصول `public/` وواجهات `api/` إلى وظائف Vercel. استخدم إعدادات Vercel الحالية، وتأكد من تشغيل `npm run build` ضمن إعدادات البناء قبل النشر.
+
+## المسارات والتحقق
+
+- `/` — واجهة SarVita Arc الرئيسية
+- `/login` — صفحة تسجيل الدخول
+- `/api/ping` — فحص صحة الخادم
+- `/lib.js` — الحزمة المولدة للمتصفح
+- `/script.js` — منطق الواجهة
+- `/style.css` — التنسيق الرئيسي
+- الفيديو الرئيسي: <https://files.catbox.moe/lbr5xd.mp4>
+
+بعد التشغيل، تحقق من أن `/api/ping` يعيد استجابة ناجحة، وأن `/lib.js` و`/script.js` و`/style.css` تُحمّل، ثم افحص ظهور الفيديو والواجهة الرئيسية من الهاتف والحاسوب. متغيرات البيئة الخاصة بالمصادقة وواجهات API تبقى مطلوبة حسب إعداد المشروع الحالي؛ أضف أسماء المتغيرات في منصة الاستضافة من دون كشف قيمها في README أو Git.
 
 ## Resources
 

@@ -242,6 +242,8 @@ app.use(userCssMiddleware);
 app.use(express.static(path.join(serverDirectory, 'public'), {}));
 
 // Public API
+// Keep Railway/Vercel health checks independent from authentication.
+app.get('/api/ping', (_, response) => response.sendStatus(204));
 app.use('/api/users', usersPublicRouter);
 
 // Everything below this line requires authentication

@@ -112,6 +112,7 @@
         "init": "node src/server-init.js",
         "build": "node ./scripts/build-lib.js",
         "start": "node server.js",
+        "start:production": "NODE_ENV=production node server.js --listen --enableIPv4 true --enableIPv6 false --port ${PORT:-8000}",
         "debug": "node --inspect server.js",
         "start:global": "node server.js --global",
         "start:electron": "cd ./src/electron && npm run start",

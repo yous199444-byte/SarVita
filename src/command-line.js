@@ -300,7 +300,8 @@ export class CommandLineParser {
         const result = {
             configPath: configPath,
             dataRoot: dataRoot,
-            port: cliArguments.port ?? getConfigValue('port', defaultConfig.port, 'number'),
+            // Railway supplies PORT at runtime; explicit CLI/config values still take precedence.
+            port: cliArguments.port ?? (Number.isInteger(Number(process.env.PORT)) && Number(process.env.PORT) > 0 ? Number(process.env.PORT) : null) ?? getConfigValue('port', defaultConfig.port, 'number'),
             listen: cliArguments.listen ?? getConfigValue('listen', defaultConfig.listen, 'boolean'),
             listenAddressIPv6: cliArguments.listenAddressIPv6 ?? getConfigValue('listenAddress.ipv6', defaultConfig.listenAddressIPv6),
             listenAddressIPv4: cliArguments.listenAddressIPv4 ?? getConfigValue('listenAddress.ipv4', defaultConfig.listenAddressIPv4),
